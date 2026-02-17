@@ -1,0 +1,39 @@
+name: QA Automation Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: # Permite ejecución manual desde la web de GitHub
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Dar permisos de ejecución a Gradlew
+        run: chmod +x gradlew
+
+      - name: Ejecutar Pruebas y Generar Reporte
+        # Se ejecuta 'clean' para limpiar, 'test' para correr Cucumber y 'aggregate' para el reporte HTML
+        run: ./gradlew clean test aggregate
+        continue-on-error: true # Permite que el flujo siga para subir los reportes aunque fallen las pruebas
+
+      - name: Subir Reporte de Serenity (HTML)
+        if: always() # Asegura que el reporte se suba siempre, sin importar el resultado de los tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: serenity-qa-report
+          path: target/site/serenity/ # Ruta por defecto de los reportes de Serenity
+          retention-days: 5
