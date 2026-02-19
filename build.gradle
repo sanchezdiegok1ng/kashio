@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+        // Verifica que esta línea esté presente y bien escrita
+        id "net.serenity-bdd.serenity-gradle-plugin" version "4.0.15"
+
+
+}
+
+group = 'org.evelart'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:4.0.15"
+    implementation "net.serenity-bdd:serenity-cucumber:4.0.15"
+    implementation "net.serenity-bdd:serenity-screenplay:4.0.15"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:4.0.15"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.0"
+    testImplementation "net.serenity-bdd:serenity-cucumber:4.2.63" // Versión estable actual
+
+}
+
+
+test {
+    useJUnitPlatform()
+}
