@@ -3,8 +3,6 @@
 !**/src/**/build/
 .idea/
 gradle/
-gradlew
-gradlew.bat
 target/
 # Ignore Gradle GUI config
 gradle-app.setting
