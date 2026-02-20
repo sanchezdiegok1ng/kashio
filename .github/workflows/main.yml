@@ -27,6 +27,8 @@ jobs:
 
       - name: Ejecutar Pruebas y Generar Reporte
         # Se ejecuta 'clean' para limpiar, 'test' para correr Cucumber y 'aggregate' para el reporte HTML
+        env:
+          NOMBRE_VARIABLE_ENV: ${{ secrets.GOREST_TOKEN }}
         run: ./gradlew clean test aggregate
         continue-on-error: true # Permite que el flujo siga para subir los reportes aunque fallen las pruebas
 
