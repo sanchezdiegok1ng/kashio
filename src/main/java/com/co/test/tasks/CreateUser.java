@@ -21,13 +21,13 @@ public class CreateUser implements Task {
     @Override
     public <T extends net.serenitybdd.screenplay.Actor> void performAs(T actor) {
 
-        String token = EnvironmentSpecificConfiguration.from(environmentVariables)
-                .getProperty("restapi.auth.token");
+        //String token = EnvironmentSpecificConfiguration.from(environmentVariables)                .getProperty("restapi.auth.token");
 
-
+        String token = System.getenv("GOREST_TOKEN");
         actor.attemptsTo(
                 Post.to("/public/v2/users")
                         .with(request -> request
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
                                 .header("Authorization", "Bearer "+ token  )
                                 .header("Content-Type", "application/json")
                                 .body(user))

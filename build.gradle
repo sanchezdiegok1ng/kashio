@@ -31,6 +31,5 @@ dependencies {
 
 test {
     systemProperty "cucumber.glue", "com.co.test.stepdefinitions"
-    // Esto obliga a Gradle a usar el motor de JUnit 4 (que usa Serenity)
     useJUnit()
 }

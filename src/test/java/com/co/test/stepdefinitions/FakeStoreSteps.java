@@ -20,7 +20,6 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.collection.IsMapContaining.hasKey;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.hamcrest.core.StringContains.containsString;
@@ -41,7 +40,7 @@ public class FakeStoreSteps {
     }
     @When("consulta el listado de {string}")
     public void consultaElListadoDe(String resource) {
-        theActorInTheSpotlight().attemptsTo(Get.resource("/" + resource));
+        theActorInTheSpotlight().attemptsTo(Get.resource("/" + resource).with(request -> request.header("User-Agent", "PostmanRuntime/7.28.4")));
     }
     @Then("el status code debe ser {int}")
     public void elStatusCodeDebeSer(Integer code) {

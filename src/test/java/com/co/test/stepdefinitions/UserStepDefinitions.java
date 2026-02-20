@@ -36,7 +36,7 @@ public class UserStepDefinitions {
 
     @Given("que el administrador tiene acceso a la API de GoRest")
     public void setup() {
-        OnStage.theActorCalled("Admin")
+        OnStage.theActorInTheSpotlight()
                 .whoCan(CallAnApi.at("https://gorest.co.in"));
     }
 
