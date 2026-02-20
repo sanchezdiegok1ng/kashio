@@ -1,4 +1,4 @@
-package com.co.test.stepsdefinitions;
+package com.co.test.stepdefinitions;
 
 import com.co.test.questions.LosDatosDelProducto;
 import com.co.test.tasks.UpdateProduct;

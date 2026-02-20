@@ -1,9 +1,10 @@
+
 Feature: Gestión de recursos en FakeStore API
 
   Background:
     Given que el analista accede a la URL base "https://fakestoreapi.com"
 
-  @test
+  @get
   Scenario Outline: Listar recursos  de users y validar estructura
     When consulta el listado de "<recurso>"
     Then el status code debe ser 200
@@ -31,7 +32,7 @@ Feature: Gestión de recursos en FakeStore API
       | recurso  | id |
       | carts | 1  |
 
-@test
+  @put
   Scenario: Actualización exitosa de un carrito existente
     When el usuario actualiza la cart 1 con los siguientes datos:
 

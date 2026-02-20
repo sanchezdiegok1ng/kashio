@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         tags = "@test",
-        glue = "com.co.test.stepsdefinitions",
+        glue = "com.co.test.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class Runner {

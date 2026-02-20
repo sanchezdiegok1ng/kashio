@@ -1,4 +1,4 @@
-package com.co.test.stepsdefinitions;
+package com.co.test.stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -11,6 +11,7 @@ import static org.hamcrest.core.Is.is;
 
 public class UsersFakeStoreSteps {
 
+
     @Then("la respuesta debe contener un usuario con username {string}")
     public void verificarUsername(String username) {
         OnStage.theActorInTheSpotlight().should(
@@ -21,7 +22,7 @@ public class UsersFakeStoreSteps {
 
     @Then("debería ver que los tipos de datos son correctos según el esquema")
     public void validarTiposDeDatos() {
-     
+
     }
 }
 

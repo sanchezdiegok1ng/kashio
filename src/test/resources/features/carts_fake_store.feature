@@ -1,9 +1,10 @@
+
 Feature: Gestión de recursos en FakeStore API
 
   Background:
     Given que el analista accede a la URL base "https://fakestoreapi.com"
 
-  @tag
+  @tag @regresion
   Scenario Outline: Listar recursos  de carts y validar estructura
     When consulta el listado de "<recurso>"
     Then el status code debe ser 200

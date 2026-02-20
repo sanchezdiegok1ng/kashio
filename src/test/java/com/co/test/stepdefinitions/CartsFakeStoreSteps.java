@@ -1,8 +1,7 @@
-package com.co.test.stepsdefinitions;
+package com.co.test.stepdefinitions;
 
 import com.co.test.tasks.DeleteCart;
 import com.co.test.tasks.UpdateCart;
-import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
 
@@ -21,6 +20,7 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 
 public class CartsFakeStoreSteps {
+
 
     @Then("la lista debe contener carts con el formato correcto")
     public void verifyListFormat() {
