@@ -23,7 +23,7 @@ public class CreateUser implements Task {
 
         //String token = EnvironmentSpecificConfiguration.from(environmentVariables)                .getProperty("restapi.auth.token");
 
-        String token = System.getenv("GOREST_TOKEN");
+        String token = System.getProperty("GOREST_TOKEN");
         actor.attemptsTo(
                 Post.to("/public/v2/users")
                         .with(request -> request
