@@ -1,5 +1,5 @@
 # kashio
-repositorio para Prueba técnica QA Automation Lead 
+Repositorio para Prueba técnica QA Automation Lead 
 
 Autor: Diego Fernando Sanchez Rios
 
@@ -18,3 +18,19 @@ Respuestas:
 4. Inicialmente Trabajar con mooks, Limpieza de datos y esperas flexibles
 5. Ejecucion en paralelo uso de tags @smokeTest @regression
 
+
+
+1. Calidad vs Velocidad
+Producto quiere salir hoy, pero QA detecta riesgos. ¿Cómo negocias, qué información 
+llevas y cómo decides el plan de salida?
+
+La informacion que llevaria seria los tipos de riegos, la severidad el impacto en la seguridad y el usuario final; Alternativas tecnicas que disminuyan el impacto
+Despues de explicar claramente lo qué puede pasar si se libera con los riesgos actuales y se consideran:
+
+* Riesgos críticos: se recomienda retrasar la salida, aunque haya presión.
+
+* Riesgos moderados o bajos: se puede negociar salida con mitigaciones, siempre que haya un plan de contingencia claro.
+
+* Plan de accion
+
+2.
