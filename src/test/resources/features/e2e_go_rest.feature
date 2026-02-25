@@ -1,7 +1,7 @@
 
 Feature: Gestión de usuarios en GoRest
 
-  @test
+  @test5
   Scenario: Crear un nuevo usuario exitosamente
     Given que el administrador tiene acceso a la API de GoRest
     When envía la información del nuevo usuario

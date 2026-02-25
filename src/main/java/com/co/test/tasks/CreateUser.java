@@ -21,11 +21,7 @@ public class CreateUser implements Task {
     @Override
     public <T extends net.serenitybdd.screenplay.Actor> void performAs(T actor) {
 
-        //String token = EnvironmentSpecificConfiguration.from(environmentVariables)                .getProperty("restapi.auth.token");
-
-
-        String token = "64f0ece6412696d6e11a5c4f57eda9efc31b165d6e0e605fa22202d3aa9e848b";
-                //System.getProperty("GOREST_TOKEN");
+        String token = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("restapi.auth.token");
         actor.attemptsTo(
                 Post.to("/public/v2/users")
                         .with(request -> request

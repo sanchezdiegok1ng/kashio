@@ -1,5 +1,6 @@
 package com.co.test.tasks;
 
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Patch;
 import net.thucydides.model.util.EnvironmentVariables;
@@ -21,10 +22,8 @@ public class UpdateUser implements Task {
     }
 
     @Override
-    public <T extends net.serenitybdd.screenplay.Actor> void performAs(T actor) {
-        String token = EnvironmentSpecificConfiguration.from(environmentVariables)
-                .getProperty("restapi.auth.token");
-
+    public <T extends Actor> void performAs(T actor) {
+        String token = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("restapi.auth.token");
         actor.attemptsTo(
                 Patch.to("/public/v2/users/{id}")
                         .with(request -> request

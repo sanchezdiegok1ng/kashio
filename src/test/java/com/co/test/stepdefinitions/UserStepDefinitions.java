@@ -36,8 +36,11 @@ public class UserStepDefinitions {
 
     @Given("que el administrador tiene acceso a la API de GoRest")
     public void setup() {
+
+        String url = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("environments.qa.webdriver.base.url");
+        System.out.println(url);
         OnStage.theActorInTheSpotlight()
-                .whoCan(CallAnApi.at("https://gorest.co.in"));
+                .whoCan(CallAnApi.at(url));
     }
 
     @When("envía la información del nuevo usuario")
