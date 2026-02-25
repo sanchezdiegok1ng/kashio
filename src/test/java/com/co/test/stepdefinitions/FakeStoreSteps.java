@@ -50,10 +50,10 @@ public class FakeStoreSteps {
     @Then("el listado debe ser un array no vacio con estructura correcta para {string}")
     public void elListadoDebeSerUnArrayNoVacioConEstructuraCorrectaPara(String string) {
         theActorInTheSpotlight().should(seeThatResponse(r -> r
-                .body("id", equalTo(1))
-                .body("title", containsString("Fjallraven"))
-                .body("price", is(instanceOf(Float.class)))
-                .body("image", allOf(notNullValue(), is(instanceOf(String.class))))
+                .body("[0].id", equalTo(1))
+                .body("[0].title", containsString("Fjallraven"))
+                .body("[0].price", is(instanceOf(Number.class))) // Nota: JSON suele parsear números como Float o Double, Number es más seguro
+                .body("[0].image", allOf(notNullValue(), is(instanceOf(String.class))))
         ));
     }
 
