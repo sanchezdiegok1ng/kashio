@@ -28,6 +28,7 @@ public class UpdateUser implements Task {
                 Patch.to("/public/v2/users/{id}")
                         .with(request -> request
                                 .pathParam("id", userId)
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
                                 .header("Authorization", "Bearer " + token)
                                 .header("Content-Type", "application/json")
                                 .body(payload) // Solo enviará lo que esté en el mapa
