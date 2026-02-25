@@ -21,7 +21,9 @@ public class DeleteProduct implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Delete.from("/products/{id}")
-                        .with(request -> request.pathParam("id", productId))
+                        .with(request -> request.pathParam("id", productId)
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
+                        )
         );
     }
 }

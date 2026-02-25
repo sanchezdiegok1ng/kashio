@@ -26,6 +26,8 @@ public class UpdateProduct implements Task {
                 Put.to("/products/" + id)
                         .with(request -> request
                                 .header("Content-Type", "application/json")
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
+
                                 .body(datos)
                         )
         );

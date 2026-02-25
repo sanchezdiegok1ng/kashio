@@ -25,8 +25,11 @@ public class CreateCarts implements Task {
         actor.attemptsTo(
                 Post.to("/carts")
                         .with(request -> request
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
+
                                 .contentType(ContentType.JSON)
                                 .body(productData)
+
                         )
         );
     }

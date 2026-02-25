@@ -1,4 +1,4 @@
-
+@test
 Feature: Gestión de recursos en FakeStore API
 
   Background:

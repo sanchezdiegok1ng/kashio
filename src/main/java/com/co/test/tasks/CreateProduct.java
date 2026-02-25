@@ -24,6 +24,8 @@ public class CreateProduct implements Task {
         actor.attemptsTo(
                 Post.to("/products")
                         .with(request -> request
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
+
                                 .contentType(ContentType.JSON)
                                 .body(productData)
                         )
