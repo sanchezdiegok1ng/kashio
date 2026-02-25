@@ -104,6 +104,7 @@ public class UserStepDefinitions {
                 Get.resource("/public/v2/users/{id}")
                         .with(request -> request
                                 .header("Authorization", "Bearer " + token)
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
                                 .pathParam("id", id)
                         )
 
