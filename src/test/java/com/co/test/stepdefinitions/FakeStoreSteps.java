@@ -62,7 +62,9 @@ public class FakeStoreSteps {
 
         theActorInTheSpotlight().attemptsTo(
                 Get.resource("/"+string+"/{id}")
-                        .with(request -> request.pathParam("id", string2))
+                        .with(request -> request.pathParam("id", string2)
+                                .header("User-Agent", "PostmanRuntime/7.28.4")
+                        )
         );
     }
 
